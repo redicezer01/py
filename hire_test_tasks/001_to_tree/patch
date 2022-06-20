@@ -1,0 +1,32 @@
+33d32
+<     nested = dict()
+37,42d35
+<         if k is None:
+<             # links between root and nested
+<             if nested.get(v) is None:
+<                 nested[v] = dict()
+<             root[v] = nested[v]
+<             continue
+44,45c37,38
+<         if nested.get(k) is None:
+<             nested[k] = dict()
+---
+>         if k not in root:
+>             root[k] = {}
+47,50c40,42
+<         # links nested
+<         if nested.get(v) is None:
+<             nested[k][v] = dict()
+<             nested[v] = nested[k][v]
+---
+>         if v not in root: 
+>             root[k][v] = {}
+>             root[v] = root[k][v]
+52c44
+<             nested[k][v] = nested[v]
+---
+>             root[k][v] = root[v]
+54c46
+<     return root
+---
+>     return root[None]
