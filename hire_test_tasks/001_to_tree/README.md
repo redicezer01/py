@@ -1,3 +1,12 @@
+   
+### Resume:  
+- Using "in" operator instead .get() method. It's more readable, fast and make sense
+- Using 1 dict "root" instead of 2 (second is "nested")
+  
+This two changes makes code much more shorter
+
+### Details  
+  
  #### my version of code:  
  
  
@@ -85,11 +94,3 @@
 	 29 <     return root
 	 30 ---
 	 31 >     return root[None]
-  
-  
-  
-#### Resume:  
-- Using "in" operator instead .get() method. It's more readable, fast and make sense
-- Using 1 dict "root" instead of 2 (second is "nested")
-  
-This two changes makes code much more shorter
