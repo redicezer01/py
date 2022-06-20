@@ -1,32 +1,32 @@
  #### my version of code:  
  
-<code>   
-def to_tre(source):    
-  1     """return a tree (dictionary)"""    
-  2     root = {}    
-  3     nested = dict()    
-  4    
-  5     # generating tree
-  6     for k, v in source:
-  7         if k is None:
-  8             # links between root and nested
-  9             if nested.get(v) is None:
- 10                 nested[v] = dict()
- 11             root[v] = nested[v]
- 12             continue
- 13
- 14         if nested.get(k) is None:
- 15             nested[k] = dict()
- 16
- 17         # links nested
- 18         if nested.get(v) is None:
- 19             nested[k][v] = dict()
- 20             nested[v] = nested[k][v]
- 21         else:
- 22             nested[k][v] = nested[v]
- 23
- 24     return root
-</code>   
+ 
+	def to_tre(source):    
+	   1     """return a tree (dictionary)"""    
+	   2     root = {}    
+	   3     nested = dict()    
+	   4    
+	   5     # generating tree
+	   6     for k, v in source:
+	   7         if k is None:
+	   8             # links between root and nested
+	   9             if nested.get(v) is None:
+	  10                 nested[v] = dict()
+	  11             root[v] = nested[v]
+	  12             continue
+	  13
+	  14         if nested.get(k) is None:
+	  15             nested[k] = dict()
+	  16
+	  17         # links nested
+	  18         if nested.get(v) is None:
+	  19             nested[k][v] = dict()
+	  20             nested[v] = nested[k][v]
+	  21         else:
+	  22             nested[k][v] = nested[v]
+	  23
+	  24     return root
+   
   
 #### improved code after feedback:  
   
