@@ -1,11 +1,11 @@
  #### my version of code:  
  
 <code>   
-def to_tre(source):   
-  1     """return a tree (dictionary)"""  
-  2     root = {}  
-  3     nested = dict()  
-  4
+def to_tre(source):    
+  1     """return a tree (dictionary)"""    
+  2     root = {}    
+  3     nested = dict()    
+  4    
   5     # generating tree
   6     for k, v in source:
   7         if k is None:
