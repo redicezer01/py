@@ -1,7 +1,7 @@
  #### my version of code:  
  
 <code>   
-def to_tre(source):  
+def to_tre(source):   
   1     """return a tree (dictionary)"""  
   2     root = {}  
   3     nested = dict()  
