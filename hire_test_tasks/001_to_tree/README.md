@@ -30,62 +30,62 @@
   
 #### improved code after feedback:  
   
-<code>  
-def to_tree(source):
-  1     """return a tree (dictionary)"""
-  2     root = {}
-  3
-  4     # generating tree
-  5     for k, v in source:
-  6
-  7         if k not in root:
-  8             root[k] = {}
-  9
- 10         if v not in root:
- 11             root[k][v] = {}
- 12             root[v] = root[k][v]
- 13         else:
- 14             root[k][v] = root[v]
- 15
- 16     return root[None]
-</code>  
+ 
+	def to_tree(source):
+	  1     """return a tree (dictionary)"""
+	  2     root = {}
+	  3
+	  4     # generating tree
+	  5     for k, v in source:
+	  6
+	  7         if k not in root:
+	  8             root[k] = {}
+	  9
+	 10         if v not in root:
+	 11             root[k][v] = {}
+	 12             root[v] = root[k][v]
+	 13         else:
+	 14             root[k][v] = root[v]
+	 15
+	 16     return root[None]
+
   
 #### diffs  
 
-<code>  
-  33d32
-  1 <     nested = dict()
-  2 37,42d35
-  3 <         if k is None:
-  4 <             # links between root and nested
-  5 <             if nested.get(v) is None:
-  6 <                 nested[v] = dict()
-  7 <             root[v] = nested[v]
-  8 <             continue
-  9 44,45c37,38
- 10 <         if nested.get(k) is None:
- 11 <             nested[k] = dict()
- 12 ---
- 13 >         if k not in root:
- 14 >             root[k] = {}
- 15 47,50c40,42
- 16 <         # links nested
- 17 <         if nested.get(v) is None:
- 18 <             nested[k][v] = dict()
- 19 <             nested[v] = nested[k][v]
- 20 ---
- 21 >         if v not in root:
- 22 >             root[k][v] = {}
- 23 >             root[v] = root[k][v]
- 24 52c44
- 25 <             nested[k][v] = nested[v]
- 26 ---
- 27 >             root[k][v] = root[v]
- 28 54c46
- 29 <     return root
- 30 ---
- 31 >     return root[None]
-</code>  
+ 
+	  33d32
+	  1 <     nested = dict()
+	  2 37,42d35
+	  3 <         if k is None:
+	  4 <             # links between root and nested
+	  5 <             if nested.get(v) is None:
+	  6 <                 nested[v] = dict()
+	  7 <             root[v] = nested[v]
+	  8 <             continue
+	  9 44,45c37,38
+	 10 <         if nested.get(k) is None:
+	 11 <             nested[k] = dict()
+	 12 ---
+	 13 >         if k not in root:
+	 14 >             root[k] = {}
+	 15 47,50c40,42
+	 16 <         # links nested
+	 17 <         if nested.get(v) is None:
+	 18 <             nested[k][v] = dict()
+	 19 <             nested[v] = nested[k][v]
+	 20 ---
+	 21 >         if v not in root:
+	 22 >             root[k][v] = {}
+	 23 >             root[v] = root[k][v]
+	 24 52c44
+	 25 <             nested[k][v] = nested[v]
+	 26 ---
+	 27 >             root[k][v] = root[v]
+	 28 54c46
+	 29 <     return root
+	 30 ---
+	 31 >     return root[None]
+  
   
   
 #### Resume:  
